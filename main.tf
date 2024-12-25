@@ -44,7 +44,7 @@ module "ec2_instance" {
   ami_id           = var.ami_id
   instance_type    = var.instance_type
   ssh_key          = var.ssh_key
-  sec_grp_id       = "sg-0826493edff1d99c8"
+  #sec_grp_id       = "sg-0826493edff1d99c8"
 }
 
 # module "s3_bucket" {
