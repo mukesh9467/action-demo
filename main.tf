@@ -63,12 +63,12 @@ module "ec2_instance" {
 #   policy_desc      = var.policy_desc
 #   }
 
-module "load_balancer" {
-  source           = "./modules/load_balancer"
-  lb_name          = var.lb_name
-  lb_type          = var.lb_type
-  tg_name          = var.tg_name
-  sec_grp_id       = "sg-0826493edff1d99c8"
-  subnet_ids       = "subnet-07644b9a6c62cadee"
-  vpc_id           = "vpc-0a038accd4e65e364"
-  }
+# module "load_balancer" {
+#   source           = "./modules/load_balancer"
+#   lb_name          = var.lb_name
+#   lb_type          = var.lb_type
+#   tg_name          = var.tg_name
+#   sec_grp_id       = "sg-0826493edff1d99c8"
+#   subnet_ids       = "subnet-07644b9a6c62cadee"
+#   vpc_id           = "vpc-0a038accd4e65e364"
+#   }

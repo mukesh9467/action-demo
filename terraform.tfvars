@@ -52,6 +52,6 @@
 # policy_name  = "demo_ec2_policy"
 # policy_desc  = "Demo Policy for EC2 Instance"
 
-lb_name         = "demo-load-balancer"
-lb_type         = "application"
-tg_name         = "demo-target"
+# lb_name         = "demo-load-balancer"
+# lb_type         = "application"
+# tg_name         = "demo-target"
