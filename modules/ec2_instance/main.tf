@@ -7,7 +7,7 @@ resource "aws_instance" "this" {
   key_name        = var.ssh_key
  
   tags = {
-    Name = "dev-instance-${count.index}"
+    Name = "dev-instance"
   }
 }
 
