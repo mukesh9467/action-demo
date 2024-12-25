@@ -1,4 +1,4 @@
 output "instance_ids" {
   description = "List of EC2 instance IDs"
-  value       = aws_instance.this.*.id
+  value       = aws_instance.this.id
 }

@@ -37,15 +37,15 @@ module "global" {
 #   ]
 # }
 
-# module "ec2_instance" {
-#   source           = "./modules/ec2_instance"
-#   instance_count   = var.instance_count
-#   subnet_ids       = module.vpc.subnet_ids
-#   ami_id           = var.ami_id
-#   instance_type    = var.instance_type
-#   ssh_key          = var.ssh_key
-#   sec_grp_id       = module.security_grp.sec_grp_id
-# }
+module "ec2_instance" {
+  source           = "./modules/ec2_instance"
+  #instance_count   = var.instance_count
+  #subnet_ids       = module.vpc.subnet_ids
+  ami_id           = var.ami_id
+  instance_type    = var.instance_type
+  ssh_key          = var.ssh_key
+  sec_grp_id       = "sg-0826493edff1d99c8"
+}
 
 # module "s3_bucket" {
 #   source           = "./modules/s3_bucket"

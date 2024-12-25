@@ -42,25 +42,25 @@
 #   default = []
 # }
 
-# ##############################
-# ##  EC2 Instance Variables  ##
-# ##############################
+##############################
+##  EC2 Instance Variables  ##
+##############################
 # variable "instance_count" {
 #   type        = number
 #   description = "Number of EC2 instances to launch"
 # }
-# variable "ami_id" {
-#   type        = string
-#   description = "AMI ID for EC2 instances"
-# }
-# variable "instance_type" {
-#   type        = string
-#   description = "Type of EC2 instance"
-# }
-# variable "ssh_key" {
-#   type = string
-#   description = "SSH key for login"
-# }
+variable "ami_id" {
+  type        = string
+  description = "AMI ID for EC2 instances"
+}
+variable "instance_type" {
+  type        = string
+  description = "Type of EC2 instance"
+}
+variable "ssh_key" {
+  type = string
+  description = "SSH key for login"
+}
 
 ##############################
 ##   S3 Bucket Variables    ##
