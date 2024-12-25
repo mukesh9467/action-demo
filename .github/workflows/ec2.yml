@@ -22,13 +22,18 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-south-1
 
-      # Launch an EC2 instance
+      # Initialize
       - name: Init Phase
         id: init
         run: terraform init
 
-      # Launch an EC2 instance
+      # Plan
       - name: Plan Phase
         id: plan
         run: terraform plan
+
+      # Apply
+      - name: Apply Phase
+        id: apply
+        run: terraform apply -auto-approve
           
