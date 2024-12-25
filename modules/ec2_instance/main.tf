@@ -3,7 +3,7 @@ resource "aws_instance" "this" {
   ami             = var.ami_id
   instance_type   = var.instance_type
   #subnet_id       = var.subnet_id #element(var.subnet_ids, count.index)
-  security_groups = [var.sec_grp_id]
+  # security_groups = [var.sec_grp_id]
   key_name        = var.ssh_key
  
   tags = {
