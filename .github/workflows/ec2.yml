@@ -1,4 +1,4 @@
-name: Deploye EC2 Instance
+name: Deploy EC2 Instance
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  launch-ec2:
+  EC2-Provisioning:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,6 +24,11 @@ jobs:
 
       # Launch an EC2 instance
       - name: Init Phase
-        id: launch_ec2
+        id: init
         run: terraform init
+
+      # Launch an EC2 instance
+      - name: Plan Phase
+        id: plan
+        run: terraform plan
           
