@@ -1,12 +1,11 @@
 resource "aws_instance" "this" {
-  count           = var.instance_count
   ami             = var.ami_id
   instance_type   = var.instance_type
-  subnet_id       = element(var.subnet_ids, count.index)
-  security_groups = [var.sec_grp_id]
+  subnet_id       = [subnet-07644b9a6c62cadee]
+  security_groups = [sg-0826493edff1d99c8]
   key_name        = var.ssh_key
  
   tags = {
-    Name = "dev-instance-${count.index}"
+    Name = "dev-instance"
   }
 }
