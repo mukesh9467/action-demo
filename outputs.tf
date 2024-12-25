@@ -34,17 +34,17 @@
 #   value       = module.iam_role.role_arn
 # }
 
-output "load_balancer_dns_name" {
-  description = "DNS name of the load balancer"
-  value       = module.load_balancer.lb_dns_name
-}
+# output "load_balancer_dns_name" {
+#   description = "DNS name of the load balancer"
+#   value       = module.load_balancer.lb_dns_name
+# }
 
-output "target_group_arn" {
-  description = "ARN of the target group"
-  value       = module.load_balancer.tg_arn
-}
+# output "target_group_arn" {
+#   description = "ARN of the target group"
+#   value       = module.load_balancer.tg_arn
+# }
 
-output "listener_arn" {
-  description = "ARN of the load balancer listener"
-  value       = module.load_balancer.listener_arn
-}
+# output "listener_arn" {
+#   description = "ARN of the load balancer listener"
+#   value       = module.load_balancer.listener_arn
+# }
