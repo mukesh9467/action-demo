@@ -22,7 +22,7 @@ variable "ssh_key" {
   type = string
   description = "SSH key for login"
 }
-variable "sec_grp_id" {
-  type = string
-  description = "Security group to be used"
-}
+# variable "sec_grp_id" {
+#   type = string
+#   description = "Security group to be used"
+# }
