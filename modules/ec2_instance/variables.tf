@@ -2,14 +2,14 @@
 #   type        = number
 #   description = "Number of EC2 instances"
 # }
-variable "subnet_ids" {
-  type        = list(string)
-  description = "List of Subnet IDs for EC2 instances"
-}
-variable "subnet_id" {
-  type        = string
-  description = "List of Subnet IDs for EC2 instances"
-}
+# variable "subnet_ids" {
+#   type        = list(string)
+#   description = "List of Subnet IDs for EC2 instances"
+# }
+# variable "subnet_id" {
+#   type        = string
+#   description = "List of Subnet IDs for EC2 instances"
+# }
 variable "ami_id" {
   type        = string
   description = "AMI ID for EC2 instances"
