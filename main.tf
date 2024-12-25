@@ -1,13 +1,13 @@
 module "global" {
-  source         = "C:/Users/MukeshSingh/Documents/Codes/Practice/tf_modules/dev/global"
+  source         = "./modules/global"
 }
 # module "vpc" {
-#   source         = "C:/Users/MukeshSingh/Documents/Codes/Practice/tf_modules/dev/vpc"
+#   source         = "./modules/vpc"
 #   vpc_cidr_block = var.vpc_cidr_block
 #   vpc_name       = var.vpc_name
 # }
 # module "security_grp" {
-#   source         = "C:/Users/MukeshSingh/Documents/Codes/Practice/tf_modules/dev/security_grp"
+#   source         = "./modules/security_grp"
 #   sec_grp_name   = var.sec_grp_name
 #   sec_grp_desc   = var.sec_grp_desc
 #   vpc_id         = module.vpc.vpc_id
@@ -38,7 +38,7 @@ module "global" {
 # }
 
 # module "ec2_instance" {
-#   source           = "C:/Users/MukeshSingh/Documents/Codes/Practice/modules/dev/ec2_instance"
+#   source           = "./modules/ec2_instance"
 #   instance_count   = var.instance_count
 #   subnet_ids       = module.vpc.subnet_ids
 #   ami_id           = var.ami_id
@@ -48,7 +48,7 @@ module "global" {
 # }
 
 # module "s3_bucket" {
-#   source           = "C:/Users/MukeshSingh/Documents/Codes/Practice/modules/dev/s3_bucket"
+#   source           = "./modules/s3_bucket"
 #   bucket_name      = var.bucket_name
 #   bucket_access    = var.bucket_access
 #   bucket_desc      = var.bucket_desc
@@ -56,7 +56,7 @@ module "global" {
 # }
 
 # module "iam_role" {
-#   source           = "C:/Users/MukeshSingh/Documents/Codes/Practice/modules/dev/iam_role"
+#   source           = "./modules/iam_role"
 #   role_name        = var.role_name 
 #   role_desc        = var.role_desc
 #   policy_name      = var.policy_name
@@ -64,7 +64,7 @@ module "global" {
 #   }
 
 module "load_balancer" {
-  source           = "C:/Users/MukeshSingh/Documents/Codes/Practice/modules/dev/load_balancer"
+  source           = "./modules/load_balancer"
   lb_name          = var.lb_name
   lb_type          = var.lb_type
   tg_name          = var.tg_name
