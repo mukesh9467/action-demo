@@ -16,10 +16,10 @@ jobs:
 
       # Set up AWS credentials
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v3
+        uses: aws-actions/configure-aws-credentials@e3dd6a429d7300a6a4c196c26e071d42e0343502
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          role-to-assume: arn:aws:iam::211125721747:role/git-action-demo
+          role-session-name: my-session
           aws-region: ap-south-1
 
       # Initialize
@@ -31,8 +31,3 @@ jobs:
       - name: Plan Phase
         id: plan
         run: terraform plan
-
-      # Apply
-      - name: Apply Phase
-        id: apply
-        run: terraform apply -auto-approve
