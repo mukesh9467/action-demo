@@ -1,12 +1,9 @@
-name: AWS Provisioning Demo
+name: AWS Destroy
 on:
-  push:
-    branches:
-      - main
-permissions:
-  id-token: write
+  workflow_dispatch:
+
 jobs:
-  AWS-Provisioning:
+  AWS-Destroy:
     runs-on: ubuntu-latest
     steps:
       # Checkout the repository
@@ -23,10 +20,10 @@ jobs:
 
       # Initialize
       - name: Init Phase
-        id: init
+        id: init-destroy
         run: terraform init
-      
-      # Plan
-      - name: Plan Phase
-        id: plan
-        run: terraform plan
+
+      # Destroy
+      - name: Destroy Phase
+        id: destroy
+        run: terraform destroy -auto-approve
