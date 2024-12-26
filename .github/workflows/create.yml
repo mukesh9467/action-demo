@@ -4,7 +4,9 @@ on:
   push:
     branches:
       - main
-
+permissions:
+  id-token: write
+  
 jobs:
   AWS-Provisioning:
     runs-on: ubuntu-latest
