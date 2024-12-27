@@ -34,7 +34,7 @@ jobs:
         run: |
           BUCKET_NAME="mymsplanet01-terraform"
           MODULE_FOLDER="modules/network/"
-          MODULE_LOCATION="$BUCKET_NAME/MODULE_FOLDER"
+          MODULE_LOCATION="$BUCKET_NAME/$MODULE_FOLDER"
           VERSIONS=$(aws s3 ls s3://$BUCKET_NAME/$MODULE_FOLDER | awk '{print $4}' | grep -Eo '[0-9]+\.[0-9]+\.[0-9]+' | sort -V)
 
           LATEST_VERSION=$(echo "$VERSIONS" | tail -n 1 || echo "0.0.0")
