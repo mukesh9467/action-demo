@@ -32,16 +32,13 @@ jobs:
       - name: Determine Next Version
         id: version
         run: |
-          # List current versions in the folder
           MODULE_FOLDER="modules/network/"
           BUCKET_NAME="mymsplanet01-terraform"
           VERSIONS=$(aws s3 ls s3://$BUCKET_NAME/$MODULE_FOLDER | awk '{print $4}' | grep -Eo '[0-9]+\.[0-9]+\.[0-9]+' | sort -V)
 
-          # Get the latest version
           LATEST_VERSION=$(echo "$VERSIONS" | tail -n 1 || echo "0.0.0")
           echo "Latest version: $LATEST_VERSION"
 
-          # Increment the version (e.g., 0.2.2 -> 0.2.3)
           NEW_VERSION=$(echo $LATEST_VERSION | awk -F. '{printf "%d.%d.%d", $1, $2, $3+1}')
           echo "Next version: $NEW_VERSION"
 
@@ -50,13 +47,13 @@ jobs:
 
       - name: Create Versioned ZIP
         run: |
-          MODULE_NAME="terraform-module-${{ env.NEW_VERSION }}"
+          MODULE_NAME="${{ env.NEW_VERSION }}"
           zip -r ${MODULE_NAME}.zip ./*
           echo "MODULE_NAME=${MODULE_NAME}.zip" >> $GITHUB_ENV
 
       - name: Upload to S3
         run: |
           MODULE_FOLDER="module/network/"
-          aws s3 cp ${{ env.MODULE_NAME }} s3://my-terraform-modules/$MODULE_FOLDER${{ env.MODULE_NAME }}
+          aws s3 cp ${{ env.MODULE_NAME }} s3://$BUCKET_NAME/$MODULE_FOLDER{{ env.MODULE_NAME }}
         env:
           AWS_REGION: ap-south-1
