@@ -54,6 +54,6 @@ jobs:
       - name: Upload to S3
         run: |
           MODULE_FOLDER="module/network/"
-          aws s3 cp ${{ env.MODULE_NAME }} s3://$BUCKET_NAME/$MODULE_FOLDER{{ env.MODULE_NAME }}
+          aws s3 cp ${{ env.MODULE_NAME }} s3://$BUCKET_NAME/$MODULE_FOLDER/
         env:
           AWS_REGION: ap-south-1
