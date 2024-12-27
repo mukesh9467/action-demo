@@ -59,4 +59,4 @@ jobs:
           MODULE_FOLDER="module/network/"
           aws s3 cp ${{ env.MODULE_NAME }} s3://my-terraform-modules/$MODULE_FOLDER${{ env.MODULE_NAME }}
         env:
-          AWS_REGION: ap.south-1
+          AWS_REGION: ap-south-1
