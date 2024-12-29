@@ -45,7 +45,7 @@ jobs:
           
           echo "Module Location: $MODULE_LOCATION"
 
-          # Export new version
+          # Export new version & module location
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
           echo "MODULE_LOCATION=$MODULE_LOCATION"  >> $GITHUB_ENV
 
