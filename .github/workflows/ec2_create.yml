@@ -1,0 +1,29 @@
+name: AWS Provisioning Demo
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+
+jobs:
+  AWS-Provisioning:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@e3dd6a429d7300a6a4c196c26e071d42e0343502
+        with:
+          role-to-assume: arn:aws:iam::211125721747:role/git-action-demo
+          role-session-name: my-session
+          aws-region: ap-south-1
+
+      - name: Init Phase
+        id: init
+        run: terraform init
+
+      - name: Plan Phase
+        id: plan
+        run: terraform plan
